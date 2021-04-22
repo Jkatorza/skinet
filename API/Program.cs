@@ -23,6 +23,7 @@ namespace API
                 var loggerFactory = services.GetRequiredService<ILoggerFactory>();
                 try 
                 {
+                    Console.WriteLine ("Test");
                     var context = services.GetRequiredService<StoreContext>();
                     await context.Database.MigrateAsync();
                     await StoreContextSeed.SeedAsync(context, loggerFactory);
